@@ -25,4 +25,9 @@
 - 특정 속성이나 배열이 수정 불가능하다는 것을 명시
 - 불변성을 강제하여 프로그램의 안정성과 예측 가능성을 높임
 
-
+### readonly 사용
+- react props / state
+  - react의 props와 state는 불변성을 가져야만 한다.
+  - 따라서 react 내부적으로 readonly로 표기하고 있기에 직접 적어줄 필요 없음
+- as const
+  - 객체에 as const를 붙이면 모든 속성이 readonly가 된다.
