@@ -198,3 +198,28 @@ type Concrete<Type> = {
     [Property in keyof Type]-?: Type[Perperty];
 }
 ```
+
+### 제네릭(Generic)
+
+다양한 타입 간에 재사용성을 높이기 위해 사용
+
+제네릭은 일반화된 데이터 타입을 의미하므로 함수나 클래스 등의 내부에서 제네릭을 사용할 때 어떤 타입이든 될 수 있음
+-> 특정한 타입에서만 존재하는 멤버를 참조할 수 없음
+
+```js
+function exampleFun2<T>(arg: T): number {
+  return arg.length; // 에러 발생: Property 'length' does not exist on Type 'T'
+}
+```
+
+만약 특정 타입에서 존재하는 것을 사용하고 싶다면 내부에 특정 속성을 가진 타입만 받도록 제약(범위를 좁힘)을 걸어주면 가능함
+
+```js
+interface TypeWithLength {
+    length: number;
+}
+
+function exampleFunc2<T extends TypeWithLength(ar: T): number> {
+    return arg.length;
+}
+```

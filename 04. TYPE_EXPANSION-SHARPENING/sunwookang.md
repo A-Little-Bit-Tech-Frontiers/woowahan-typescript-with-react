@@ -13,7 +13,7 @@
   - A 속성을 B 객체가 갖고있는지 확인
 - is
   - 함수의 반환 타입 정의
-  - ```
+  - ```ts
     interface Bird {
       fly: () => void;
     }
@@ -42,7 +42,7 @@
 - 여러 객체 타입을 유니온으로 활용하고자 할 때 유용
 
 - 예시
-```
+```ts
 type MaleSchool = 'male1' | 'male2' | 'male3' | 'male4';
 type FemaleSchool = 'female1' | 'female2';
 type CoedSchool = 'coed1' | 'coed2' | 'coed3';
@@ -84,7 +84,7 @@ const person2: Person = {
 - orgnaization member invite에서 admin을 선택했을 경우 이름을 추가로 받아야 한다고 할 때
 
 **기존**
-```
+```ts
 export interface IInviteMemberForm {
   role: MemberRoleType;
   email: string;
@@ -92,7 +92,7 @@ export interface IInviteMemberForm {
 ```
 
 **변경**
-```
+```ts
 interface IBase {
   role: MemberRoleType;
   email: string;
